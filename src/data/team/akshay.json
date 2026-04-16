@@ -1,0 +1,22 @@
+{
+  "slug": "akshay",
+  "name": "Akshay",
+  "avatar": "/avatars/akshay.png",
+  "role": "Engineer",
+  "type": "electric",
+  "hp": 130,
+  "flavor": "Ships fast, breaks staging (never prod).",
+  "bio": "Placeholder card — Akshay, edit this file to add your bio, role, likes/dislikes, and links.",
+  "likes": ["Small PRs", "Hot reload", "Cold brew"],
+  "dislikes": ["Flaky tests", "10k-line diffs"],
+  "stats": [
+    { "label": "Caffeine Level", "value": 95 },
+    { "label": "Deadline Resistance", "value": 75 },
+    { "label": "Prompt-Fu", "value": 85 },
+    { "label": "Stakeholder Charm", "value": 65 }
+  ],
+  "moves": [
+    { "name": "Ship Bolt", "description": "Merges the PR before standup.", "power": 95 }
+  ],
+  "links": {}
+}

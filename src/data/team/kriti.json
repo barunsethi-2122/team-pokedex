@@ -1,0 +1,34 @@
+{
+  "slug": "kriti",
+  "name": "Kriti Sharma",
+  "avatar": "/avatars/kriti.png",
+  "role": "AI PM Workshop Lead",
+  "type": "psychic",
+  "hp": 120,
+  "flavor": "Turns ambiguous briefs into shipped roadmaps.",
+  "bio": "PM at Yulu. Leads the AI PM workshop series and partners with Akshay (HoP) on AI-augmented product workflows.",
+  "likes": ["Fast feedback loops", "Lenny's podcast", "Good chai", "Clean specs"],
+  "dislikes": ["Vague briefs", "Meetings without agendas", "Scope creep"],
+  "stats": [
+    { "label": "Caffeine Level", "value": 85 },
+    { "label": "Deadline Resistance", "value": 90 },
+    { "label": "Prompt-Fu", "value": 95 },
+    { "label": "Stakeholder Charm", "value": 80 }
+  ],
+  "moves": [
+    {
+      "name": "Roadmap Slash",
+      "description": "Cuts through scope creep and aligns stakeholders.",
+      "power": 90
+    },
+    {
+      "name": "Spec Beam",
+      "description": "Turns a fuzzy idea into a crisp PRD.",
+      "power": 70
+    }
+  ],
+  "links": {
+    "linkedin": "https://linkedin.com/in/",
+    "email": "navtheunstoppable@gmail.com"
+  }
+}

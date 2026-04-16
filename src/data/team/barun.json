@@ -1,0 +1,22 @@
+{
+  "slug": "barun",
+  "name": "Barun",
+  "avatar": "/avatars/barun.png",
+  "role": "Researcher",
+  "type": "water",
+  "hp": 100,
+  "flavor": "Follows the user, wherever they flow.",
+  "bio": "Placeholder card — Barun, edit this file to add your bio, role, likes/dislikes, and links.",
+  "likes": ["Raw transcripts", "Affinity diagrams", "Curious questions"],
+  "dislikes": ["Leading questions", "Assumptions without data"],
+  "stats": [
+    { "label": "Caffeine Level", "value": 55 },
+    { "label": "Deadline Resistance", "value": 85 },
+    { "label": "Prompt-Fu", "value": 75 },
+    { "label": "Stakeholder Charm", "value": 80 }
+  ],
+  "moves": [
+    { "name": "Insight Wave", "description": "Surfaces the unstated need.", "power": 85 }
+  ],
+  "links": {}
+}

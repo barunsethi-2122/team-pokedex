@@ -1,0 +1,22 @@
+{
+  "slug": "mridul",
+  "name": "Mridul",
+  "avatar": "/avatars/mridul.png",
+  "role": "Founder",
+  "type": "dragon",
+  "hp": 140,
+  "flavor": "Dreams in roadmaps, ships in weeks.",
+  "bio": "Placeholder card — Mridul, edit this file to add your bio, role, likes/dislikes, and links.",
+  "likes": ["Bold bets", "First principles", "Fast decisions"],
+  "dislikes": ["Bike-shedding", "Analysis paralysis"],
+  "stats": [
+    { "label": "Caffeine Level", "value": 90 },
+    { "label": "Deadline Resistance", "value": 95 },
+    { "label": "Prompt-Fu", "value": 85 },
+    { "label": "Stakeholder Charm", "value": 90 }
+  ],
+  "moves": [
+    { "name": "Vision Roar", "description": "Aligns a whole org in one all-hands.", "power": 100 }
+  ],
+  "links": {}
+}

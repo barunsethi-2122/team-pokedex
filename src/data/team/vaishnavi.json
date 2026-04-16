@@ -1,0 +1,22 @@
+{
+  "slug": "vaishnavi",
+  "name": "Vaishnavi",
+  "avatar": "/avatars/vaishnavi.png",
+  "role": "Designer",
+  "type": "fairy",
+  "hp": 110,
+  "flavor": "Makes pixels sing.",
+  "bio": "Placeholder card — Vaishnavi, edit this file to add your bio, role, likes/dislikes, and links.",
+  "likes": ["Figma", "Typography", "Well-spaced margins"],
+  "dislikes": ["Dribbble clones", "Low-contrast text"],
+  "stats": [
+    { "label": "Caffeine Level", "value": 60 },
+    { "label": "Deadline Resistance", "value": 80 },
+    { "label": "Prompt-Fu", "value": 70 },
+    { "label": "Stakeholder Charm", "value": 90 }
+  ],
+  "moves": [
+    { "name": "Grid Strike", "description": "Aligns the chaos.", "power": 80 }
+  ],
+  "links": {}
+}

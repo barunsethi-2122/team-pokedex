@@ -1,0 +1,22 @@
+{
+  "slug": "sagar",
+  "name": "Sagar",
+  "avatar": "/avatars/sagar.png",
+  "role": "Content",
+  "type": "grass",
+  "hp": 95,
+  "flavor": "Words that plant, stories that grow.",
+  "bio": "Placeholder card — Sagar, edit this file to add your bio, role, likes/dislikes, and links.",
+  "likes": ["Strong verbs", "Short sentences", "Clean narratives"],
+  "dislikes": ["Corporate jargon", "Synergy"],
+  "stats": [
+    { "label": "Caffeine Level", "value": 65 },
+    { "label": "Deadline Resistance", "value": 85 },
+    { "label": "Prompt-Fu", "value": 90 },
+    { "label": "Stakeholder Charm", "value": 75 }
+  ],
+  "moves": [
+    { "name": "Story Vine", "description": "Threads a narrative stakeholders actually remember.", "power": 80 }
+  ],
+  "links": {}
+}

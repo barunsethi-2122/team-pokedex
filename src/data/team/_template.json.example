@@ -1,0 +1,41 @@
+{
+  "_comment": "Copy this file to <your-slug>.json (e.g. alice.json) and edit. Drop your avatar PNG at public/avatars/<your-slug>.png. Remove the leading underscore when saving so Vite picks it up.",
+  "slug": "your-slug",
+  "name": "Your Name",
+  "avatar": "/avatars/your-slug.png",
+  "role": "Your Role",
+  "type": "electric",
+  "hp": 100,
+  "flavor": "A one-liner that captures your vibe.",
+  "bio": "Two or three sentences about what you do and what you're into.",
+  "likes": ["Thing one", "Thing two", "Thing three"],
+  "dislikes": ["Pet peeve one", "Pet peeve two"],
+  "stats": [
+    { "label": "Caffeine Level", "value": 70 },
+    { "label": "Deadline Resistance", "value": 65 },
+    { "label": "Prompt-Fu", "value": 80 },
+    { "label": "Stakeholder Charm", "value": 75 }
+  ],
+  "moves": [
+    { "name": "Signature Move", "description": "What you do best.", "power": 80 }
+  ],
+  "links": {
+    "slack": "@your-handle",
+    "linkedin": "https://linkedin.com/in/your-handle",
+    "twitter": "https://twitter.com/your-handle",
+    "email": "you@example.com",
+    "website": "https://yoursite.com"
+  },
+  "_type_options": [
+    "psychic (Strategist / PM)",
+    "fairy (Designer)",
+    "electric (Engineer)",
+    "fighting (Ops)",
+    "water (Researcher)",
+    "fire (Growth)",
+    "grass (Content)",
+    "dragon (Founder)",
+    "ghost (Data / ML)",
+    "steel (Platform)"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "slug": "sagar-malik",
+  "name": "Sagar Malik",
+  "avatar": "/avatars/sagar-malik.png",
+  "role": "Growth",
+  "type": "fire",
+  "hp": 115,
+  "flavor": "Turns funnels into fireworks.",
+  "bio": "Placeholder card — Sagar Malik, edit this file to add your bio, role, likes/dislikes, and links.",
+  "likes": ["A/B tests", "Clean attribution", "Viral loops"],
+  "dislikes": ["Vanity metrics", "Untracked experiments"],
+  "stats": [
+    { "label": "Caffeine Level", "value": 80 },
+    { "label": "Deadline Resistance", "value": 70 },
+    { "label": "Prompt-Fu", "value": 75 },
+    { "label": "Stakeholder Charm", "value": 85 }
+  ],
+  "moves": [
+    { "name": "Funnel Blaze", "description": "10x's conversion overnight.", "power": 90 }
+  ],
+  "links": {}
+}

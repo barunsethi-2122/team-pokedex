@@ -1,0 +1,68 @@
+:root {
+  --bg-0: #0b1020;
+  --bg-1: #131a33;
+  --bg-2: #1c2547;
+  --text-0: #f4f5ff;
+  --text-1: #c6cbe8;
+  --text-2: #8a91bd;
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow-card: 0 20px 60px -20px rgba(0, 0, 0, 0.75);
+  --shadow-hover: 0 30px 80px -20px rgba(0, 0, 0, 0.9);
+
+  --radius-card: 18px;
+  --radius-inner: 10px;
+
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+[data-type='psychic'] {
+  --type-a: #ff6fd8;
+  --type-b: #8a4fff;
+  --type-glow: rgba(255, 111, 216, 0.45);
+}
+[data-type='fairy'] {
+  --type-a: #ffb3d9;
+  --type-b: #ff6fa8;
+  --type-glow: rgba(255, 178, 217, 0.45);
+}
+[data-type='electric'] {
+  --type-a: #ffe45e;
+  --type-b: #ffa600;
+  --type-glow: rgba(255, 228, 94, 0.5);
+}
+[data-type='fighting'] {
+  --type-a: #ff8a5b;
+  --type-b: #c0392b;
+  --type-glow: rgba(255, 138, 91, 0.45);
+}
+[data-type='water'] {
+  --type-a: #66c1ff;
+  --type-b: #2e67e8;
+  --type-glow: rgba(102, 193, 255, 0.5);
+}
+[data-type='fire'] {
+  --type-a: #ff8f5c;
+  --type-b: #e23c3c;
+  --type-glow: rgba(255, 143, 92, 0.5);
+}
+[data-type='grass'] {
+  --type-a: #8ee57c;
+  --type-b: #2fa262;
+  --type-glow: rgba(142, 229, 124, 0.45);
+}
+[data-type='dragon'] {
+  --type-a: #9b7cff;
+  --type-b: #4c3bcf;
+  --type-glow: rgba(155, 124, 255, 0.5);
+}
+[data-type='ghost'] {
+  --type-a: #a58cff;
+  --type-b: #4b2ea0;
+  --type-glow: rgba(165, 140, 255, 0.45);
+}
+[data-type='steel'] {
+  --type-a: #b8c3d4;
+  --type-b: #6b7a97;
+  --type-glow: rgba(184, 195, 212, 0.35);
+}

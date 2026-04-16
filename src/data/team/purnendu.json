@@ -1,0 +1,22 @@
+{
+  "slug": "purnendu",
+  "name": "Purnendu",
+  "avatar": "/avatars/purnendu.png",
+  "role": "Ops",
+  "type": "fighting",
+  "hp": 125,
+  "flavor": "Keeps the trains running, the docs tidy.",
+  "bio": "Placeholder card — Purnendu, edit this file to add your bio, role, likes/dislikes, and links.",
+  "likes": ["Clear SLAs", "Runbooks", "Calm incident reviews"],
+  "dislikes": ["Unowned tickets", "Silent rollouts"],
+  "stats": [
+    { "label": "Caffeine Level", "value": 75 },
+    { "label": "Deadline Resistance", "value": 95 },
+    { "label": "Prompt-Fu", "value": 70 },
+    { "label": "Stakeholder Charm", "value": 85 }
+  ],
+  "moves": [
+    { "name": "Process Uppercut", "description": "KOs chaos with a 3-step runbook.", "power": 85 }
+  ],
+  "links": {}
+}

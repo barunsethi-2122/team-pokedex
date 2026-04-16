@@ -1,0 +1,246 @@
+.wrap {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) 1fr;
+  gap: 32px;
+  align-items: start;
+  background: linear-gradient(180deg, rgba(28, 37, 71, 0.95), rgba(19, 26, 51, 0.95));
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.7);
+}
+
+.cardSlot {
+  aspect-ratio: 5 / 7;
+  width: 100%;
+  display: block;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.name {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--text-0);
+}
+
+.typePill {
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, var(--type-a), var(--type-b));
+  color: #fff;
+  border-radius: 999px;
+  box-shadow: 0 4px 16px -4px var(--type-glow);
+}
+
+.role {
+  color: var(--text-1);
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.flavor {
+  margin: 0;
+  font-style: italic;
+  color: var(--text-2);
+  border-left: 3px solid var(--type-a);
+  padding-left: 14px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.bio {
+  margin: 0;
+  color: var(--text-1);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sectionTitle {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-2);
+  margin: 0;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.tag {
+  padding: 4px 10px;
+  font-size: 13px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-1);
+  border: 1px solid var(--border);
+}
+
+.tagDislike {
+  background: rgba(255, 100, 100, 0.08);
+  border-color: rgba(255, 100, 100, 0.2);
+}
+
+.statRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.statLabel {
+  color: var(--text-1);
+  flex: 0 0 auto;
+  min-width: 140px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.statBar {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.statFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--type-a), var(--type-b));
+  border-radius: 999px;
+  transition: width 0.6s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+.statValue {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--text-0);
+  min-width: 36px;
+  text-align: right;
+}
+
+.moves {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.move {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+}
+
+.moveHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.moveName {
+  font-weight: 700;
+  color: var(--text-0);
+  font-size: 14px;
+}
+
+.movePower {
+  background: linear-gradient(135deg, var(--type-a), var(--type-b));
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.moveDesc {
+  color: var(--text-2);
+  font-size: 13px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.link {
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-0);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--type-a);
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 24px;
+  }
+  .cardSlot {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .name {
+    font-size: 26px;
+  }
+  .twoCol {
+    grid-template-columns: 1fr;
+  }
+  .statLabel {
+    min-width: 110px;
+  }
+}
