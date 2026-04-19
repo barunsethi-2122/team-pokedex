@@ -8,9 +8,11 @@ import styles from './CardDetail.module.css';
 
 interface CardDetailProps {
   member: TeamMember;
+  bgmMuted?: boolean;
+  onToggleBgmMute?: () => void;
 }
 
-export function CardDetail({ member }: CardDetailProps) {
+export function CardDetail({ member, bgmMuted, onToggleBgmMute }: CardDetailProps) {
   const [gameOpen, setGameOpen] = useState(false);
   const { links } = member;
   const linkEntries: Array<[string, string]> = [];
@@ -38,6 +40,25 @@ export function CardDetail({ member }: CardDetailProps) {
           <div className={styles.header}>
             <h2 className={styles.name}>{member.name}</h2>
             <span className={styles.typePill}>{TYPE_LABELS[member.type]}</span>
+            {onToggleBgmMute && (
+              <button
+                onClick={onToggleBgmMute}
+                aria-label={bgmMuted ? 'Unmute BGM' : 'Mute BGM'}
+                style={{
+                  marginLeft: 'auto',
+                  padding: '4px 12px',
+                  borderRadius: 999,
+                  border: '1px solid rgba(218,165,32,0.35)',
+                  background: 'rgba(218,165,32,0.08)',
+                  color: '#ffd700',
+                  fontSize: 12,
+                  cursor: 'pointer',
+                  flexShrink: 0,
+                }}
+              >
+                {bgmMuted ? '🔇 BGM Off' : '🔊 BGM On'}
+              </button>
+            )}
           </div>
           <p className={styles.role}>{member.role}</p>
         </div>

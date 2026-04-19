@@ -25,13 +25,27 @@ export default function App() {
   const [activeSlug, setActiveSlug] = useState<string | null>(() =>
     getSlugFromUrl(),
   );
-  const { muted, toggleMute, playHover, playOpen, playClose } = useSounds();
+  const {
+    muted, toggleMute,
+    playHover, playOpen, playClose,
+    shadowBgmMuted, toggleShadowBgmMute,
+    startShadowBgm, stopShadowBgm,
+  } = useSounds();
 
   const activeMember = findBySlug(activeSlug);
 
   useEffect(() => {
     setSlugInUrl(activeMember ? activeMember.slug : null);
   }, [activeMember]);
+
+  useEffect(() => {
+    if (activeMember?.slug === 'barun') {
+      startShadowBgm();
+    } else {
+      stopShadowBgm();
+    }
+    return () => { stopShadowBgm(); };
+  }, [activeMember?.slug]);
 
   useEffect(() => {
     const onPop = () => setActiveSlug(getSlugFromUrl());
@@ -83,7 +97,11 @@ export default function App() {
       <AnimatePresence>
         {activeMember && (
           <Modal key={activeMember.slug} onClose={handleClose} onCloseSound={playClose}>
-            <CardDetail member={activeMember} />
+            <CardDetail
+              member={activeMember}
+              bgmMuted={shadowBgmMuted}
+              onToggleBgmMute={activeMember.slug === 'barun' ? toggleShadowBgmMute : undefined}
+            />
           </Modal>
         )}
       </AnimatePresence>

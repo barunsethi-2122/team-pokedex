@@ -46,70 +46,10 @@ function chimeClose() {
 
 // ── Shadow Monarch sounds (Barun's card) ──────────────────────────────────────
 
-function shadowOpen() {
-  const ac = getCtx();
-  const now = ac.currentTime;
-
-  // Layer 1 — deep bass surge, the void awakening
-  const bass = ac.createOscillator();
-  const bassGain = ac.createGain();
-  bass.type = 'sine';
-  bass.frequency.setValueAtTime(48, now);
-  bass.frequency.exponentialRampToValueAtTime(38, now + 1.0);
-  bassGain.gain.setValueAtTime(0, now);
-  bassGain.gain.linearRampToValueAtTime(0.22, now + 0.12);
-  bassGain.gain.exponentialRampToValueAtTime(0.001, now + 1.0);
-  bass.connect(bassGain).connect(ac.destination);
-  bass.start(now);
-  bass.stop(now + 1.0);
-
-  // Layer 2 — eerie descending sawtooth (portal tearing open)
-  const tear = ac.createOscillator();
-  const tearGain = ac.createGain();
-  tear.type = 'sawtooth';
-  tear.frequency.setValueAtTime(260, now + 0.06);
-  tear.frequency.exponentialRampToValueAtTime(100, now + 0.65);
-  tearGain.gain.setValueAtTime(0.07, now + 0.06);
-  tearGain.gain.exponentialRampToValueAtTime(0.001, now + 0.7);
-  tear.connect(tearGain).connect(ac.destination);
-  tear.start(now + 0.06);
-  tear.stop(now + 0.7);
-
-  // Layer 3 — dark lower harmonic (shadow echo)
-  const echo = ac.createOscillator();
-  const echoGain = ac.createGain();
-  echo.type = 'sawtooth';
-  echo.frequency.setValueAtTime(130, now + 0.12);
-  echo.frequency.exponentialRampToValueAtTime(52, now + 0.65);
-  echoGain.gain.setValueAtTime(0.04, now + 0.12);
-  echoGain.gain.exponentialRampToValueAtTime(0.001, now + 0.7);
-  echo.connect(echoGain).connect(ac.destination);
-  echo.start(now + 0.12);
-  echo.stop(now + 0.7);
-
-  // Layer 4 — ethereal high shimmer (stars forging)
-  const star = ac.createOscillator();
-  const starGain = ac.createGain();
-  star.type = 'sine';
-  star.frequency.setValueAtTime(2400, now + 0.35);
-  star.frequency.exponentialRampToValueAtTime(1600, now + 0.85);
-  starGain.gain.setValueAtTime(0.03, now + 0.35);
-  starGain.gain.exponentialRampToValueAtTime(0.001, now + 0.85);
-  star.connect(starGain).connect(ac.destination);
-  star.start(now + 0.35);
-  star.stop(now + 0.85);
-
-  // Layer 5 — second gold shimmer pulse (constellation locking in)
-  const spark = ac.createOscillator();
-  const sparkGain = ac.createGain();
-  spark.type = 'sine';
-  spark.frequency.setValueAtTime(3200, now + 0.55);
-  spark.frequency.exponentialRampToValueAtTime(2000, now + 0.9);
-  sparkGain.gain.setValueAtTime(0.02, now + 0.55);
-  sparkGain.gain.exponentialRampToValueAtTime(0.001, now + 0.9);
-  spark.connect(sparkGain).connect(ac.destination);
-  spark.start(now + 0.55);
-  spark.stop(now + 0.9);
+function shadowClick() {
+  const audio = new Audio('/sounds/barun-whoosh.mp3');
+  audio.volume = 0.8;
+  audio.play().catch(() => {});
 }
 
 function shadowHover() {
@@ -138,6 +78,19 @@ function shadowHover() {
   whisper.connect(whisperGain).connect(ac.destination);
   whisper.start(now + 0.05);
   whisper.stop(now + 0.22);
+}
+
+// ── Shadow BGM (plays while Barun's modal is open) ────────────────────────────
+
+let shadowBgmAudio: HTMLAudioElement | null = null;
+
+function getShadowBgmAudio(): HTMLAudioElement {
+  if (!shadowBgmAudio) {
+    shadowBgmAudio = new Audio('/sounds/barun-bgm.mp3');
+    shadowBgmAudio.loop = true;
+    shadowBgmAudio.volume = 0.45;
+  }
+  return shadowBgmAudio;
 }
 
 // ── Chiptune BGM ──────────────────────────────────────────────────────────────
@@ -213,6 +166,7 @@ const bgm = new ChiptunePlayer();
 
 export function useSounds() {
   const [muted, setMuted] = useState(false);
+  const [shadowBgmMuted, setShadowBgmMuted] = useState(false);
   const lastHover = useRef(0);
 
   const playHover = useCallback((slug?: string) => {
@@ -228,7 +182,7 @@ export function useSounds() {
   const playOpen = useCallback((slug?: string) => {
     bgm.startOnce();
     if (muted || prefersReducedMotion()) return;
-    if (slug === 'barun') shadowOpen();
+    if (slug === 'barun') shadowClick();
     else chimeOpen();
   }, [muted]);
 
@@ -245,5 +199,35 @@ export function useSounds() {
     });
   }, []);
 
-  return { muted, toggleMute, playHover, playOpen, playClose };
+  const startShadowBgm = useCallback(() => {
+    if (prefersReducedMotion()) return;
+    bgm.setMuted(true);
+    const audio = getShadowBgmAudio();
+    audio.muted = shadowBgmMuted || muted;
+    audio.currentTime = 0;
+    audio.play().catch(() => {});
+  }, [muted, shadowBgmMuted]);
+
+  const stopShadowBgm = useCallback(() => {
+    const audio = getShadowBgmAudio();
+    audio.pause();
+    audio.currentTime = 0;
+    bgm.setMuted(muted);
+  }, [muted]);
+
+  const toggleShadowBgmMute = useCallback(() => {
+    setShadowBgmMuted((m) => {
+      const next = !m;
+      const audio = getShadowBgmAudio();
+      audio.muted = next;
+      return next;
+    });
+  }, []);
+
+  return {
+    muted, toggleMute,
+    playHover, playOpen, playClose,
+    shadowBgmMuted, toggleShadowBgmMute,
+    startShadowBgm, stopShadowBgm,
+  };
 }
